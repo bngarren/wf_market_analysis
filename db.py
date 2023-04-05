@@ -1,12 +1,16 @@
 import psycopg2
 import sqlalchemy
 import pandas as pd
+import os
+from dotenv import load_dotenv
 
-host="96.255.166.164"
-port="6500"
-db="wf_market"
-user="postgres"
-pwd="bng2113!"
+load_dotenv()
+
+host=os.getenv("DB_HOST")
+port=os.getenv("DB_PORT")
+db=os.getenv("DB_NAME")
+user=os.getenv("DB_USER")
+pwd=os.getenv("DB_PASSWORD")
 
 def getData(query):
     
